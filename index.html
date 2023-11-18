@@ -54,10 +54,7 @@
       .bindPopup('Моноколесо, Вячеслав, 8-747-669-11-27').openPopup();
 
 
-    L.control.locate({
-      icon: 'fa fa-location-arrow',  
-      iconLoading: 'fa fa-spinner fa-spin',  
-    }).addTo(map);
+    L.control.locate().addTo(map);
 
     var marker = L.marker([43.275978, 76.892519], { icon: customIcon }).addTo(map)
       .bindPopup('Моноколесо, Сергей, 8-707-332-32-40').openPopup();
@@ -69,7 +66,7 @@
     map.on('locationfound', function (e) {
       var radius = e.accuracy / 2;
 
-      L.marker(e.latlng, { icon: customIcon }).addTo(map)
+      L.marker(e.latlng).addTo(map)
         .bindPopup("Вы находитесь здесь!").openPopup();
 
       L.circle(e.latlng, radius).addTo(map);
