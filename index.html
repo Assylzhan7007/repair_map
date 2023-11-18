@@ -97,8 +97,8 @@ footer img{
 
 
     #map {
-      width: 100% !important;
-      height: 800px !important;
+      width: 100vw;
+      height: 100vh;
     }
   </style>
 </head>
@@ -150,15 +150,6 @@ footer img{
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-    // Добавляем кнопку для определения местоположения пользователя
-    L.control.locate({
-      icon: 'fa fa-location-arrow',  // используем значок стрелки для кнопки
-      iconLoading: 'fa fa-spinner fa-spin',  // используем значок спиннера во время загрузки
-    }).addTo(map);
 
     // Показываем местоположение пользователя
     map.on('locationfound', function (e) {
